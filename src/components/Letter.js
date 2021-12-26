@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 
 class Letter extends Component {
+  constructor() {
+    super();
+  }
+  clickLetter = () => {
+    this.props.clickLetter(this.props.letter);
+  };
   render() {
-    return 5;
+    return <span onClick={this.clickLetter}>{this.props.letter}</span>;
   }
 }
 

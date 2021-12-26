@@ -25,9 +25,14 @@ export class App extends Component {
   clickLetter = (letter) => {
     let changeLetterStatus = { ...this.state.letterStatus };
 
+    if (this.state.word.includes(letter)) {
+      this.setState({ score: this.state.score + 10 });
+    } else {
+      this.setState({ score: this.state.score - 20 });
+    }
+
     changeLetterStatus[letter] = true;
     this.setState({ letterStatus: changeLetterStatus });
-    console.log("a");
   };
   generateLetterStatuses() {
     let letterStatus = {};

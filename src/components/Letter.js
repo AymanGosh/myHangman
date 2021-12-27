@@ -8,7 +8,11 @@ class Letter extends Component {
     this.props.clickLetter(this.props.letter);
   };
   render() {
-    return <span onClick={this.clickLetter}>{this.props.letter}</span>;
+    return (
+      <span className={this.props.className} onClick={this.clickLetter}>
+        {this.props.letter}
+      </span>
+    );
   }
 }
 
